@@ -6,7 +6,7 @@
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 10:56:23 by yazlaigi          #+#    #+#             */
-/*   Updated: 2025/12/16 13:02:55 by yazlaigi         ###   ########.fr       */
+/*   Updated: 2025/12/17 10:46:10 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,47 +26,61 @@ void    PhoneBook::addContact(){
     std::string input;
 
     std::cout << "Enter First Name: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
     while (input.empty())
     {
         std::cout << "emty string! try again." << std::endl;
-        std::getline(std::cin, input);
+
+        if (!std::getline(std::cin, input))
+            return;
     }
     contacts[next_index].setFirstName(input);
 
     std::cout << "Enter Last Name: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
     while (input.empty())
     {
         std::cout << "emty string! try again." << std::endl;
-        std::getline(std::cin, input);
+
+        if (!std::getline(std::cin, input))
+            return;
     }
     contacts[next_index].setLastName(input);
 
     std:: cout << "Enter Nick Name: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
     while (input.empty())
     {
         std::cout << "emty string! try again." << std::endl;
-        std::getline(std::cin, input);
+
+        if (!std::getline(std::cin, input))
+            return;
     }
     contacts[next_index].setNickName(input);
 
     std::cout << "Enter Phone Number: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
     while (input.empty())
     {
         std::cout << "emty string! try again." << std::endl;
-        std::getline(std::cin, input);
+
+        if (!std::getline(std::cin, input))
+            return;
     }
     contacts[next_index].setPhoneNumber(input);
 
     std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, input);
+    if (!std::getline(std::cin, input))
+        return;
     while (input.empty())
     {
         std::cout << "emty string! try again." << std::endl;
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+            return;
     }
     contacts[next_index].setDarkestSecret(input); 
     next_index = (next_index + 1) % 8;
