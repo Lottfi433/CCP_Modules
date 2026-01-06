@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 12:26:10 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/01/01 10:22:08 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:54:42 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/03 13:15:42 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#include "Weapon.hpp"
 
-int main ()
-{
-    Zombie* z1 = newZombie("heapy");
-    z1->announce();
-    delete z1;
-    randomChump("stack");
-}
+class HumanA{
+private:
+    std::string name;
+    Weapon& weapon;
+public:
+    HumanA(std::string name, Weapon& weapon);
+    void attack() const;
+};

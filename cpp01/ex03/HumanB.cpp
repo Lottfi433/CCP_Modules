@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 12:26:10 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/01/01 10:22:08 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:55:40 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/03 13:04:32 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-int main ()
-{
-    Zombie* z1 = newZombie("heapy");
-    z1->announce();
-    delete z1;
-    randomChump("stack");
+HumanB::HumanB(std::string name){
+    this->name = name;
+    this->weapon = nullptr;
+}
+
+void HumanB::setWeapon(Weapon& weapon){
+    this->weapon = &weapon;
+}
+void HumanB::attack() const{
+    if (weapon)
+        std::cout << name << " attacks with their "<< weapon->getType() << std::endl;
+    else
+        std::cout << name << " has no weapon" << std::endl;
 }

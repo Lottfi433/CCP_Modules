@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 12:26:10 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/01/01 10:22:08 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:55:19 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/03 12:50:18 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
+#include <iostream>
+#include "Weapon.hpp"
 
-int main ()
-{
-    Zombie* z1 = newZombie("heapy");
-    z1->announce();
-    delete z1;
-    randomChump("stack");
-}
+class HumanB{
+private:
+    Weapon* weapon;
+    std::string name;
+public:
+    HumanB(std::string name);
+    void setWeapon(Weapon& weapon);
+    void attack() const;
+};

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 12:26:10 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/01/01 10:22:08 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:54:17 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/03 13:11:37 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int main ()
-{
-    Zombie* z1 = newZombie("heapy");
-    z1->announce();
-    delete z1;
-    randomChump("stack");
-}
+#include <iostream>
+
+class Weapon{
+private:
+    std::string type;
+public:
+    Weapon(std::string t);
+    const std::string& getType() const;
+    void  setType(std::string newValue);
+};
