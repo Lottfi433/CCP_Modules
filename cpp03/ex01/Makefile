@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/01 09:45:11 by yazlaigi          #+#    #+#              #
-#    Updated: 2026/01/01 10:19:08 by yazlaigi         ###   ########.fr        #
+#    Created: 2026/01/31 09:49:53 by yazlaigi          #+#    #+#              #
+#    Updated: 2026/01/31 10:35:04 by yazlaigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-HEADERS = Zombie.hpp
-SRC = Zombie.cpp main.cpp zombieHorde.cpp
+SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-%.o: %.cpp $(HEADERS)
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)

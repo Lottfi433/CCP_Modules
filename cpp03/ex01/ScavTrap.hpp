@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Scavtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 10:54:12 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/06 09:49:41 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/31 09:51:50 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/31 10:07:38 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#pragma once
 
-const std::string& Weapon::getType() const{
-    return type;
-}
-void  Weapon::setType(std::string newValue){
-   type = newValue; 
-}
-Weapon::Weapon(std::string t){
-    this->type = t;
-}
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap{
+public :    
+    ScavTrap();
+    ScavTrap(std::string name);
+    ScavTrap(const ScavTrap& other);
+    ScavTrap& operator=(const ScavTrap& other);
+    ~ScavTrap();
+
+    void attack(const std::string& target);
+    void guardGate();
+};

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 09:32:40 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/08 10:27:26 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/31 12:41:33 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/31 13:19:52 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-
-class Harl{
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+class FragTrap: public ClapTrap{
 public:
-    void    complain(std::string level);
+    FragTrap();
+    FragTrap(std::string name);
+    FragTrap(const FragTrap& other);
+    FragTrap&   operator=(const FragTrap& other);
+    ~FragTrap();
+    
+    void attack(const std::string& target);
+    void highFivesGuys(void);
 };

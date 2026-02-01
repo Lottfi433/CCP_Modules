@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/01 09:44:57 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/01 10:14:18 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/31 09:50:06 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/31 10:37:48 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "ScavTrap.hpp"
 
-Zombie* zombieHorde( int N, std::string name ){
-    Zombie* horde =  new Zombie[N];
-    for (int i = 0; i < N; i++)
-    {
-        horde[i].setName(name);
-    }
-    return horde;
+int main(){
+    ScavTrap a("yasser");
+    a.attack("said");
+    a.takeDamage(10);
+    a.attack("hamid");
+    a.guardGate();
 }
