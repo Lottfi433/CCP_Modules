@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yasserlotfi <yasserlotfi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2025/12/31 11:49:40 by yasserlotfi       #+#    #+#             */
+/*   Updated: 2025/12/31 12:39:30 by yasserlotfi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Zombie.hpp"
 
-int main() {
-    // Animal a;
-    // Animal* b = new Animal();
-
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+void Zombie::announce(){
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
+Zombie::Zombie(std::string name){
+    this->name = name;
+}
+Zombie::~Zombie(){
+    std::cout << name << " is destroyed" << std::endl;
+}

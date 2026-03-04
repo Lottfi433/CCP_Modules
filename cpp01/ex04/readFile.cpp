@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   readFile.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/06 11:23:07 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/06 11:23:22 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "replace.hpp"
 
-int main() {
-    // Animal a;
-    // Animal* b = new Animal();
-
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+std::string ReadFile(std::string filename){
+    std::ifstream infile(filename);
+    if(!infile)
+        return "";
+    std::string line;
+    std::string content;
+    while (std::getline(infile, line))
+    {
+        content += line;
+        content += '\n';
+    }
+    infile.close();
+    return content;
 }
-

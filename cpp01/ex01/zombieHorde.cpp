@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 09:51:50 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/31 13:19:32 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/01 09:44:57 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/01 10:14:18 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap{
-public :    
-    ScavTrap();
-    ScavTrap(std::string name);
-    ScavTrap(const ScavTrap& other);
-    ScavTrap& operator=(const ScavTrap& other);
-    ~ScavTrap();
-
-    void attack(const std::string& target);
-    void guardGate();
-};
+Zombie* zombieHorde( int N, std::string name ){
+    Zombie* horde =  new Zombie[N];
+    for (int i = 0; i < N; i++)
+    {
+        horde[i].setName(name);
+    }
+    return horde;
+}

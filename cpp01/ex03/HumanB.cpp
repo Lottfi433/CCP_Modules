@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:55:40 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/11 09:56:52 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "HumanB.hpp"
 
-int main() {
-    // Animal a;
-    // Animal* b = new Animal();
-
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+HumanB::HumanB(std::string name){
+    this->name = name;
+    this->weapon = NULL;
 }
 
+void HumanB::setWeapon(Weapon& weapon){
+    this->weapon = &weapon;
+}
+void HumanB::attack() const{
+    if (weapon)
+        std::cout << name << " attacks with their "<< weapon->getType() << std::endl;
+    else
+        std::cout << name << " has no weapon" << std::endl;
+}

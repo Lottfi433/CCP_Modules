@@ -5,23 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2025/12/31 12:26:10 by yasserlotfi       #+#    #+#             */
+/*   Updated: 2026/01/01 10:22:08 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Zombie.hpp"
 
-int main() {
-    // Animal a;
-    // Animal* b = new Animal();
-
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+int main ()
+{
+    Zombie* z1 = newZombie("heapy");
+    z1->announce();
+    delete z1;
+    randomChump("stack");
 }
-

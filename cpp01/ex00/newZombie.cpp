@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yasserlotfi <yasserlotfi@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2025/12/31 12:38:30 by yasserlotfi       #+#    #+#             */
+/*   Updated: 2025/12/31 12:38:44 by yasserlotfi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Zombie.hpp"
 
-int main() {
-    // Animal a;
-    // Animal* b = new Animal();
-
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+Zombie* newZombie(std::string name){
+    return new Zombie(name);
 }
-

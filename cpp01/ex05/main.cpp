@@ -5,17 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 09:50:06 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/31 10:37:48 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/08 09:32:25 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/11 10:09:50 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Harl.hpp"
 
-int main(){
-    ScavTrap a("yasser");
-    a.attack("said");
-    a.takeDamage(10);
-    a.attack("hamid");
-    a.guardGate();
+int main(int ac, char **av){
+    Harl harl;
+    std::string input;
+
+    if (ac != 2){
+        std::cout << "Harl need only one param!" << std::endl;
+        return 1;
+    }
+    input = av[1];
+    if (input != "DEBUG" && input != "INFO" 
+        && input != "WARNING" && input != "ERROR"){
+            std::cout << "Wrong input." << std::endl;
+            return 1;
+        }
+    harl.complain(input);
 }

@@ -5,23 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/07 10:22:48 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/02/11 10:29:47 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/01 09:45:08 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/01 10:18:53 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Zombie.hpp"
 
 int main() {
-    // Animal a;
-    // Animal* b = new Animal();
+    int N = 5;
+    Zombie* horde = zombieHorde(N, "jett");
 
-    Animal* c = new Dog();
-    c->makeSound();
-    delete c;
+    for (int i = 0; i < N; i++)
+        horde[i].announce();
+    delete[] horde;
 }
-

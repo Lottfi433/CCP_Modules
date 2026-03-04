@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 09:49:42 by yazlaigi          #+#    #+#             */
-/*   Updated: 2026/01/31 10:40:01 by yazlaigi         ###   ########.fr       */
+/*   Created: 2026/01/03 10:54:42 by yazlaigi          #+#    #+#             */
+/*   Updated: 2026/01/03 13:15:42 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include <iostream>
-#include <string>
+#include "Weapon.hpp"
 
-class ClapTrap{
-protected:
-    std::string _name;
-    int _hitPoints;
-    int _energyPoints;
-    int _attackDamage;
+class HumanA{
+private:
+    std::string name;
+    Weapon& weapon;
 public:
-    ClapTrap();
-    ClapTrap(std::string Name);
-    ClapTrap(const ClapTrap& other);
-    ClapTrap& operator=(const ClapTrap& other);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+    HumanA(std::string name, Weapon& weapon);
+    void attack() const;
 };
