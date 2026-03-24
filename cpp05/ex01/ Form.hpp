@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*    Form.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasserlotfi <yasserlotfi@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 13:17:31 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/03/08 13:41:00 by yasserlotfi      ###   ########.fr       */
+/*   Updated: 2026/03/24 11:27:00 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <exception>
 #include <string>
 #include <iostream>
-#include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form{
 private:
     const std::string _name;

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*    Form.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasserlotfi <yasserlotfi@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 13:17:39 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/03/11 13:39:15 by yasserlotfi      ###   ########.fr       */
+/*   Updated: 2026/03/24 11:31:15 by yazlaigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include " Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name("default"), _signed(false), _signGrade(150), _executeGrade(150){
     std::cout << "Form Default constructor called!" << std::endl;
@@ -28,7 +29,19 @@ Form::Form(std::string name, int signGrade, int executeGrade) : _name(name), _si
     if (signGrade < 1 || executeGrade < 1)
         throw GradeTooHighException();
 }
+Form&  Form::operator=(const Form& other){
+        std::cout << "Form Copy assignment operator called" << std::endl;
+        if (this != &other)
+            _signed = other._signed;
+        return *this;
+}
 
+const char* Form::GradeTooHighException::what() const throw(){
+    return "Grade is too High!";
+}
+const char* Form::GradeTooLowException::what() const throw(){
+    return "Grade is too Low!";
+}
 const std::string&  Form::getName() const{
     return _name;
 }
@@ -42,5 +55,16 @@ bool Form::SignedStatus() const{
     return _signed;
 }
 void Form::beSigned(Bureaucrat const &b){
-    
+    if (b.getGrade() > _signGrade)
+        throw GradeTooLowException();
+    else
+        _signed = true;
+}
+std::ostream& operator<<(std::ostream& out, const Form& f)
+{
+    out << "Form " << f.getName()
+        << ", signed: " << (f.SignedStatus() ? "yes" : "no")
+        << ", sign grade: " << f.getSignGrade()
+        << ", execute grade: " << f.getExecuteGrade();
+    return out;
 }
