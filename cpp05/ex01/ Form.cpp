@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*    Form.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yazlaigi <yazlaigi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 13:17:39 by yasserlotfi       #+#    #+#             */
-/*   Updated: 2026/03/24 11:31:15 by yazlaigi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include " Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -35,7 +23,9 @@ Form&  Form::operator=(const Form& other){
             _signed = other._signed;
         return *this;
 }
-
+Form::~Form(){
+    std::cout << "Form destructor is called !" << std::endl;
+}
 const char* Form::GradeTooHighException::what() const throw(){
     return "Grade is too High!";
 }

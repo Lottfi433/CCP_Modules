@@ -5,20 +5,21 @@
 #include <iostream>
 
 class Bureaucrat;
-class Form{
+class AForm{
 private:
     const std::string _name;
     bool    _signed;
     int const _signGrade;
     int const _executeGrade;
 public:
-    Form();
-    Form(const Form& other);
-    Form(std::string name, int signGrade, int executeGrade);
-    Form&   operator=(const Form& other);
-    ~Form();
+    AForm();
+    AForm(const AForm& other);
+    AForm(std::string name, int signGrade, int executeGrade);
+    AForm&   operator=(const AForm& other);
+    virtual ~AForm();
 
     const std::string &getName() const;
+    virtual void execute(Bureaucrat const & executor) const = 0;
     int getSignGrade() const;
     int getExecuteGrade() const;
     bool SignedStatus() const;
@@ -32,4 +33,3 @@ public:
             virtual const char* what() const throw();
     };
 };
-std::ostream& operator<<(std::ostream& out, const Form& f);
