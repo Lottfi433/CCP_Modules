@@ -23,7 +23,7 @@ PresidentialPardonForm::~PresidentialPardonForm(){
     std::cout << "PresidentialPardonForm  Destructor called !" << std::endl;
 }
 void    PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-    if (!SignedStatus())
+        if (!SignedStatus())
         throw FormNotSignedException();
     if (executor.getGrade() > getExecuteGrade())
         throw GradeTooLowException();

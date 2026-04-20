@@ -1,8 +1,7 @@
 NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp
-HEADERS = Bureaucrat.hpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -21,4 +20,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean
+.PHONY: clean 

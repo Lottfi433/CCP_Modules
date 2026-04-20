@@ -26,7 +26,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 void    RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-        if (!SignedStatus())
+    if (!SignedStatus())
         throw FormNotSignedException();
     if (executor.getGrade() > getExecuteGrade())
         throw GradeTooLowException();

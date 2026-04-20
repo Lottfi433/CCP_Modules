@@ -1,7 +1,7 @@
 NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp AForm.cpp \
+SRC = main.cpp Bureaucrat.cpp AForm.cpp Intern.cpp\
       ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
       PresidentialPardonForm.cpp
 
