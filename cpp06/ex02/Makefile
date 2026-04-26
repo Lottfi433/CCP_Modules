@@ -1,8 +1,8 @@
 NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ScalarConverter.cpp
-HEADERS = ScalarConverter.hpp
+SRC = main.cpp Base.cpp
+HEADERS = Base.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

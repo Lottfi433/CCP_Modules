@@ -1,7 +1,7 @@
 NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp Serialize.cpp
 HEADERS = ScalarConverter.hpp
 OBJ = $(SRC:.cpp=.o)
 
