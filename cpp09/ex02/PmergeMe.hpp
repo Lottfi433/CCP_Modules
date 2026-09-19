@@ -23,9 +23,13 @@ public:
     void printDeque();
     void printPairs();
     void makePairs();
+    void sortPairs();
     std::vector<int> makeMainChain();
     std::vector<int> getSmallNumbers();
+    std::vector<size_t> generateJacobsthal(size_t size);
     void sortMainChain(std::vector<int>& mainChain);
+    void binaryInsert(std::vector<int>& chain, int value, size_t end);
     bool number_validation(const std::string& str);
     int  convert_number(const std::string& str);
+    std::vector<int> buildMainChain();
 };

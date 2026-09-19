@@ -32,5 +32,11 @@ for (size_t i = 0; i < mainChain.size(); i++)
     std::cout << mainChain[i] << " ";
 
 std::cout << std::endl;
+std::vector<size_t> jacob = pmerge.generateJacobsthal(10);
+
+for (size_t i = 0; i < jacob.size(); i++)
+    std::cout << jacob[i] << " ";
+
+std::cout << std::endl;
     return (0);
 }
